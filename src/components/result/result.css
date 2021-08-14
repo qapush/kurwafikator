@@ -1,0 +1,6 @@
+.result {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    padding: 2rem;
+}

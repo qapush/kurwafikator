@@ -3,3 +3,10 @@ textarea{
     margin: 2rem auto;
 }
 
+button {
+    text-align: center;
+    display: block;
+    margin: auto;
+    padding: 10px;
+    font-size: 1.2rem;
+}
