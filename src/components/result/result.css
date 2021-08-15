@@ -1,6 +1,14 @@
 .result {
     display: flex;
     margin: auto;
-    align-items: center;
+    justify-content: center;
     padding: 2rem;
+}
+
+.message {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.3rem;
 }

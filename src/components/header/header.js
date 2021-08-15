@@ -7,6 +7,7 @@ export default class Header extends Component
         return(
             <>
                 <h1>Kurwafikator</h1>
+                <hr />
             </>
         )
     }

@@ -8,26 +8,56 @@ import Result from './components/result';
 export default class App extends Component {
   
   state = {
-    result: null
+    result: null,
+    level: 3
   }
+
+  onLevelChange = (newLevel) => {
+    this.setState({ 
+      level: newLevel 
+    })
+  }
+
+  kurwafikacja = (rawText) => {
     
-    onSubmit = (rawText) => {
-      this.setState({
-        result: rawText
-      })
-    }
+    const { level } = this.state,
+          rawArray = rawText.split(' '),
+          kurwa = 'kurwa';
+
+    let finalArray = [],
+        finalText = '',
+        chunk = [];
+
+    do{
+      chunk = rawArray.splice(0, level);
+      if(chunk.length >= level) chunk.push(kurwa);
+      finalArray = finalArray.concat(chunk);
+    } while (chunk.length > level)
+
+
+    finalText = finalArray.join(' ');
+
+    this.setState({
+      result: finalText
+    })
+
+
+  }
   
   render(){
 
-    const { result } = this.state;
+    const { result, level } = this.state;
 
     return(
       <>
         <Header/>
         <Instructions/>
-        <Form onSubmit={ this.onSubmit }/>
-        <Result content={ result } 
-        onSubmit={ this.onSubmit }/>
+        <Form 
+          onSubmit={ this.kurwafikacja } 
+          lvl={ level }
+          onLevelChange = { this.onLevelChange }
+          />
+        { result ? <Result content={ result } /> : null }
       </>
     )
   }
