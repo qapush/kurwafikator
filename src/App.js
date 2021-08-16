@@ -9,7 +9,7 @@ export default class App extends Component {
   
   state = {
     result: null,
-    level: 3
+    level: 4
   }
 
   onLevelChange = (newLevel) => {
