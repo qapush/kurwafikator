@@ -6,8 +6,10 @@ export default class Header extends Component
     render(){
         return(
             <>
-                <h1>Kurwafikator</h1>
-                <hr />
+                <div className="header">
+                    <h1>Kurwafikator</h1>
+                    <hr />
+                </div> 
             </>
         )
     }
